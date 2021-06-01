@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      LAS TORRES
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="subcontent">
+    <ion-card *ngFor="let even of lista">
+      <img src="http://localhost:8080/Admin/resources/img/cliente/{{even.foto}}" />
+      <ion-card-content>
+        <ion-card-title>{{even.titulo}}</ion-card-title>
+        <p> {{even.descripcion}} </p>
+        <ion-buttons>
+          <button ion-button color="azulmarino" (click)="goPage(even, user)">Ver</button>
+          <button ion-button color="azulmarino" (click)="goComent(even, user)">Comentar</button>
+          <!-- button ion-button color="dark" (click)="goPrivate(even, user)">Chat</button -->
+        </ion-buttons>
+      </ion-card-content>
+    </ion-card>
+  
+
+</ion-content>

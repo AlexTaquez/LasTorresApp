@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="subcontent">
+    <ion-card >
+        <img src="http://localhost:8080/Admin/resources/img/cliente/{{evento.foto}}" />
+       
+        <ion-card-content>
+          <ion-card-title> {{evento.titulo}} </ion-card-title>
+          <p>
+            LUGAR: {{evento.lugar}}<br>              
+            Inicio:      {{evento.inicio}}<br>
+            Terminación: {{evento.fin}}<br>
+          </p><br>
+          <p> {{evento.descripcion}} </p><br>              
+          <p> {{evento.detalles}} </p><br>         
+          
+          <ion-buttons>
+            <button ion-button color="azulmarino" (click)="goPage(even)">Ver</button>
+            <button ion-button color="azulmarino" (click)="goComent(even, user)">Comentar</button>
+          </ion-buttons>
+          
+        </ion-card-content>
+      </ion-card>
+</ion-content>

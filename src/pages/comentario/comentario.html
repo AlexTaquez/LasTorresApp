@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>mensajeria</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="subcontent">
+
+
+  <div *ngFor="let coment of lista" class="comentAling">
+    <p style="font-size: 9px;" class="name">{{ coment.residente }}</p>
+    <p style="color: black;"> {{ coment.mensaje }}</p>
+    <p style="font-size: 9px;">{{ coment.fecha }}</p>
+  </div>
+
+  <!-- CAMPO PARA COMENTARIO -->
+  <form #comentForm="ngForm" (ngSubmit)="onSubmitComent()" class="formButton"> 
+    
+    <ion-list>
+      <ion-item>
+        <ion-input 
+          placeholder="Escribe un comentario"
+          minlength="1"
+          type="text"
+          name="comentario"
+          [(ngModel)]="comentario"
+          required>
+        </ion-input>
+
+      </ion-item>
+    </ion-list>
+    <ion-buttons>
+      <button ion-button color="secondary" class="full-width" disabled >Enviar</button> <!-- type="submit" -->
+    </ion-buttons>
+    
+  </form>
+
+</ion-content>

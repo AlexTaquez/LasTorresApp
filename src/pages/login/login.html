@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Inicio de sesion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="subcontent">
+
+  <form #logForm="ngForm" (ngSubmit)="onSubmitLog()" class="loginForm"> 
+    
+    <ion-list>
+      <ion-list-header> {{ userName || 'INGRESA TU CUENTA DE GOOGLE' }} </ion-list-header>
+
+      <ion-item>
+        <ion-input 
+        placeholder="Cuenta de Google"
+          type="email"
+          name="email"
+          pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+          [(ngModel)]="email"
+          required>
+        </ion-input>
+
+      </ion-item>
+    </ion-list>
+    <ion-buttons>
+      <button ion-button color="primary" class="full-width" type="submit"
+    [disabled]="logForm.invalid">Siguiente</button>
+    </ion-buttons>
+    
+  </form>
+</ion-content>

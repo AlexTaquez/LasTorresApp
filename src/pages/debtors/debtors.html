@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>debtors</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="subcontent">
+
+
+  
+    <ion-grid>
+      <h3>DEUDORES</h3>
+      <ion-row *ngFor="let deudor of lista">
+        <ion-col>       
+          <ion-item>
+            <ion-label>
+              <h2> {{ deudor.nombres }} {{ deudor.apellidos }} </h2>
+              <p> {{ deudor.torre }} Apartamentot: {{ deudor.apartamento }} 
+                <br> Factura vencida: {{ deudor.termino }} </p>
+              Deuda: $ <b> {{ deudor.valor }} </b>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+    </ion-grid>
+</ion-content>
